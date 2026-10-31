@@ -1,338 +1,324 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="az">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Startup Corner müraciəti — Süni İntellekt Zirvəsi 2026</title>
+<meta name="description" content="Aydan Mehdiyeva — korporativ satış və layihə menecmenti, Facemark. Biznes forumları və zirvələr.">
+<title>Aydan Mehdiyeva</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-  :root{
-    --navy:#171A3A;
-    --navy-soft:#232866;
-    --coral:#FF6068;
-    --bg:#EEF1FB;
-    --paper:#FFFFFF;
-    --ink:#1B1F3B;
-    --muted:#565C80;
-    --line:#C8CEE6;
-    --danger:#B3261E;
-    --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
-    --sans:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+/* Layout: event-programme portfolio — hero as a badge, projects as a running agenda with dates in a mono gutter */
+:root{
+  --bg:#f3f4f7;
+  --surface:#ffffff;
+  --ink:#16202c;
+  --muted:#5b6574;
+  --line:#dde1e8;
+  --accent:#a8243a;      /* nar */
+  --accent-soft:#f6e4e7;
+  --gold:#9a7a2c;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Manrope", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11161d; --surface:#18202a; --ink:#e9ecf1; --muted:#9aa4b2; --line:#283240;
+    --accent:#e2566c; --accent-soft:#3a1c23; --gold:#d3b062; color-scheme:dark;
   }
-  *{box-sizing:border-box}
-  [hidden]{display:none!important}
-  html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.55 var(--sans)}
-  .wrap{max-width:46rem;margin:0 auto;padding:0 1.25rem}
+}
+:root[data-theme="dark"]{
+  --bg:#11161d; --surface:#18202a; --ink:#e9ecf1; --muted:#9aa4b2; --line:#283240;
+  --accent:#e2566c; --accent-soft:#3a1c23; --gold:#d3b062; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+img{max-width:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 
-  /* Hero */
-  .hero{background:var(--navy);color:#fff;padding:3.25rem 0 4rem}
-  .hero .event{margin:0 0 .75rem;color:#B9C1F0;font-size:1rem}
-  .hero h1{font:700 clamp(2.5rem,8vw,3.75rem)/1.05 var(--serif);letter-spacing:-.01em;margin:0 0 1rem}
-  .hero .lead{margin:0;max-width:34rem;font-size:1.2rem;color:#DDE2FA;border-left:4px solid var(--coral);padding-left:1rem}
+/* nav */
+nav{border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;flex-wrap:wrap}
+.mark{font-family:var(--display);font-weight:800;font-size:20px;text-decoration:none}
+.mark span{color:var(--accent)}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{text-decoration:none;font-size:14px;font-weight:600;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
 
-  /* Şərtlər */
-  .terms{background:var(--paper);border-radius:8px;margin:-2rem 0 2.5rem;padding:1.5rem 1.5rem 1.25rem;box-shadow:0 1px 0 var(--line)}
-  .terms h2{font:700 1.4rem/1.2 var(--serif);margin:0 0 .75rem}
-  .terms h3{font:700 1.05rem/1.3 var(--sans);margin:1.1rem 0 .35rem}
-  .terms ul{margin:0;padding-left:1.15rem}
-  .terms li{margin:.3rem 0}
-  .terms li::marker{color:var(--coral)}
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;padding-block:72px 64px}
+.hero h1{font-size:clamp(44px,7vw,84px);font-weight:800;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:34ch;margin:22px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent)}
 
-  /* Form */
-  .note{color:var(--muted);margin:0 0 1.5rem}
-  fieldset{border:0;border-top:1px solid var(--line);margin:0;padding:1.5rem 0 .5rem;min-width:0}
-  legend{float:left;width:100%;padding:0;margin:0 0 1rem;font:700 1.4rem/1.2 var(--serif)}
-  legend + *{clear:both}
-  .field{margin:0 0 1.25rem}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:0 1.25rem}
-  @media (max-width:36rem){.row{grid-template-columns:1fr}}
-  label,.label{display:block;font-weight:600;margin:0 0 .3rem}
-  .hint{display:block;font-weight:400;color:var(--muted);font-size:.95rem}
-  input[type=text],input[type=email],input[type=tel],input[type=number],select,textarea{
-    width:100%;font:inherit;color:inherit;background:#fff;
-    border:1.5px solid var(--line);border-radius:6px;padding:.65rem .75rem;min-height:2.9rem
-  }
-  textarea{min-height:6.5rem;resize:vertical}
-  input:focus,select:focus,textarea:focus{border-color:var(--navy-soft)}
-  :focus-visible{outline:3px solid var(--navy-soft);outline-offset:2px}
-  .count{display:block;text-align:right;color:var(--muted);font-size:.9rem;margin-top:.25rem}
-  .choices{display:grid;gap:.4rem}
-  .choice{display:flex;gap:.65rem;align-items:flex-start;font-weight:400;margin:0;padding:.35rem 0;cursor:pointer}
-  .choice input{flex:none;width:1.2rem;height:1.2rem;margin:.2rem 0 0;accent-color:var(--navy-soft)}
-  .choices.two{grid-template-columns:1fr 1fr}
-  @media (max-width:36rem){.choices.two{grid-template-columns:1fr}}
+/* badge */
+.badge{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:0 0 22px;position:relative;box-shadow:0 18px 40px -24px rgba(20,30,45,.35);transform:rotate(2deg);max-width:340px;justify-self:end;width:100%}
+.badge::before{content:"";display:block;width:56px;height:10px;border-radius:6px;background:var(--line);margin:14px auto 0}
+.badge .band{background:var(--accent);color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:9px 22px;margin-top:14px}
+.badge .photo{width:110px;height:110px;border-radius:50%;margin:22px 22px 0;background:var(--accent-soft);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:34px;color:var(--accent);overflow:hidden;border:3px solid var(--surface);box-shadow:0 0 0 2px var(--accent)}
+.badge .photo img{width:100%;height:100%;object-fit:cover}
+.badge .who{padding:14px 22px 0}
+.badge .who strong{font-family:var(--display);font-size:24px;display:block;line-height:1.15}
+.badge .who span{color:var(--muted);font-size:14px}
+.badge .meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:18px 22px 0;font-size:13px}
+.badge .meta div{border-top:1px dashed var(--line);padding-top:8px}
+.badge .meta b{display:block;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 
-  .actions{border-top:1px solid var(--line);padding:1.5rem 0 3.5rem}
-  .btn{font:700 1.1rem var(--sans);background:var(--coral);color:var(--navy);border:0;border-radius:6px;padding:.9rem 1.75rem;cursor:pointer}
-  .btn:hover{background:#FF7A80}
-  .btn[disabled]{opacity:.65;cursor:progress}
+/* sections */
+section{padding-block:64px;border-top:1px solid var(--line)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:32px;flex-wrap:wrap}
+.head h2{font-size:clamp(30px,4vw,42px);font-weight:700}
 
-  .error{background:#FDECEA;border-left:4px solid var(--danger);color:#5F1410;padding:.9rem 1rem;margin:0 0 1rem;border-radius:4px}
-  .done{background:var(--paper);border-left:4px solid var(--coral);border-radius:8px;padding:1.75rem 1.5rem;margin:0 0 3.5rem}
-  .done h2{font:700 1.6rem/1.2 var(--serif);margin:0 0 .5rem}
-  .done p{margin:0}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px}
+.about p{margin:0 0 16px;max-width:62ch}
+.facts{display:grid;gap:14px;align-content:start}
+.fact{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.fact span:first-child{color:var(--muted)}
+.fact span:last-child{font-weight:700;text-align:right}
 
-  /* Honeypot */
-  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* agenda */
+.agenda{list-style:none;margin:0;padding:0;display:grid}
+.agenda li{display:grid;grid-template-columns:150px 1fr auto;gap:24px;padding-block:22px;border-bottom:1px solid var(--line);align-items:start}
+.agenda .date{font-family:var(--mono);font-size:14px;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:4px}
+.agenda .date small{display:block;color:var(--muted);font-size:12px}
+.agenda h3{font-size:22px;font-weight:700}
+.agenda p{margin:6px 0 0;color:var(--muted);max-width:60ch;font-size:15px}
+.agenda .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tag{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.agenda .site{font-family:var(--mono);font-size:13px;white-space:nowrap;padding-top:6px}
+.agenda .site a{text-decoration:none;border-bottom:1px solid var(--line)}
+.agenda .site a:hover{border-color:var(--accent)}
+.agenda li > div{min-width:0}
 
-  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.sub{font-size:20px;font-weight:700;margin:40px 0 0}
+.more{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:28px}
+.more div{padding:14px 16px;border:1px solid var(--line);border-radius:10px;font-weight:600;font-size:15px}
+.more div small{display:block;color:var(--muted);font-weight:500;font-size:13px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px}
+.skills h3{font-size:18px;margin-bottom:12px}
+.skills ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.skills li{padding-left:18px;position:relative}
+.skills li::before{content:"";position:absolute;left:0;top:.65em;width:8px;height:2px;background:var(--accent)}
+.langs{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.langs span{font-family:var(--mono);font-size:13px;border:1px solid var(--line);border-radius:6px;padding:6px 10px}
+
+/* certificates */
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.cert{border:1.5px dashed var(--line);border-radius:12px;padding:20px;display:grid;gap:8px;min-height:150px;align-content:start}
+.cert .label{color:var(--gold)}
+.cert h3{font-size:18px}
+.cert p{margin:0;color:var(--muted);font-size:14px}
+.note{margin-top:16px;font-size:14px;color:var(--muted)}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg);border-top:none}
+.contact .head h2{color:var(--bg)}
+.contact .label{color:color-mix(in srgb, var(--bg) 60%, transparent)}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 22px;border:1px solid color-mix(in srgb, var(--bg) 22%, transparent);border-radius:12px;text-decoration:none;font-weight:700;font-size:17px}
+.links a:hover{border-color:var(--accent);background:color-mix(in srgb, var(--accent) 18%, transparent)}
+.links a small{display:block;font-family:var(--mono);font-weight:400;font-size:12px;opacity:.65}
+footer{background:var(--ink);color:color-mix(in srgb, var(--bg) 55%, transparent);font-size:13px}
+footer .wrap{padding-block:24px;border-top:1px solid color-mix(in srgb, var(--bg) 14%, transparent)}
+
+@media (max-width:760px){
+  .hero .wrap,.about{grid-template-columns:1fr;gap:36px}
+  .badge{justify-self:start;transform:rotate(-1deg)}
+  .agenda li{grid-template-columns:1fr;gap:8px}
+  nav ul{gap:14px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .badge{transition:transform .4s ease}
+  .badge:hover{transform:rotate(0)}
+}
 </style>
 </head>
 <body>
 
-<header class="hero">
+<nav>
   <div class="wrap">
-    <p class="event">Süni İntellekt Zirvəsi 2026, 13 Noyabr, The Ritz-Carlton Baku</p>
-    <h1>Startup Corner</h1>
-    <p class="lead">AI Playground zonasında öz stendinizi qurun. Bu il yalnız 5 startap seçiləcək.</p>
+    <a class="mark" href="#top">Aydan<span>.</span></a>
+    <ul>
+      <li><a href="#haqqimda">Haqqımda</a></li>
+      <li><a href="#layiheler">Layihələr</a></li>
+      <li><a href="#sertifikatlar">Sertifikatlar</a></li>
+      <li><a href="#elaqe">Əlaqə</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="label">Korporativ satış · Layihə menecmenti · Facemark</div>
+      <h1 style="margin-top:14px">Biznes tədbirlərini <em>ideyadan</em> səhnəyə qədər aparıram.</h1>
+      <p class="lead">Korporativ satış və full-cycle layihə menecmenti: forum və zirvələri ideyadan səhnəyə qədər idarə edirəm.</p>
+      <div class="btns">
+        <a class="btn primary" href="#layiheler">Layihələrə bax</a>
+        <a class="btn" href="#elaqe">Əlaqə saxla</a>
+      </div>
+    </div>
+
+    <div class="badge" aria-label="Tədbir bəcidi">
+      <div class="band">Project Manager</div>
+      <div class="photo"><!-- PHOTO --><span aria-hidden="true">AM</span></div>
+      <div class="who">
+        <strong>Aydan Mehdiyeva</strong>
+        <span>Project Manager, Facemark</span>
+      </div>
+      <div class="meta">
+        <div><b>Şəhər</b>Bakı</div>
+        <div><b>Sahə</b>Korporativ satış</div>
+        <div><b>Dillər</b>AZ · EN · TR · RU</div>
+        <div><b>Şirkət</b>Facemark</div>
+      </div>
+    </div>
   </div>
 </header>
 
-<main class="wrap">
-
-  <section class="terms" aria-labelledby="sertler">
-    <h2 id="sertler">İştirak şərtləri</h2>
-
-    <h3>Kimlər müraciət edə bilər</h3>
-    <ul>
-      <li>Azərbaycanda fəaliyyət göstərən startaplar.</li>
-      <li>Ən azı işlək MVP və ya prototipi olanlar.</li>
-      <li>Məhsulunda AI istifadə edən və ya AI ilə bağlı real problemi həll edənlər.</li>
-    </ul>
-
-    <h3>Stend və giriş</h3>
-    <ul>
-      <li>Stend pulsuzdur. Seçim əsasında 5 startap iştirak edir.</li>
-      <li>Stendlər AI Playground zonasında yerləşdirilir.</li>
-      <li>Hər startapa stend üçün 1 nəfərlik giriş bileti verilir. Bilet nahara və workshoplara giriş vermir.</li>
-      <li>Əlavə komanda üzvləri üçün bilet ayrıca alınır.</li>
-      <li>Stend tədbir boyu heyətlə təmin olunmalı və məhsulun canlı demosu göstərilməlidir.</li>
-      <li>Laptop, çap materialı və nəqliyyat xərcləri startapın üzərindədir.</li>
-      <li>Müraciət iştirakı təmin etmir. Nəticə e-poçtla bildirilir.</li>
-    </ul>
-  </section>
-
-  <div id="err" class="error" role="alert" tabindex="-1" hidden>
-    Müraciət göndərilmədi. İnternet bağlantınızı yoxlayıb yenidən cəhd edin. Problem qalarsa, 055 612 20 09 nömrəsinə yazın.
+<section id="haqqimda">
+  <div class="wrap">
+    <div class="head"><h2>Haqqımda</h2><span class="label">Profil</span></div>
+    <div class="about">
+      <div>
+        <p>Mən Facemark-da layihə meneceriyəm. Facemark 15 ildən artıqdır ki, Azərbaycanda süni intellekt, HR, maliyyə, səhiyyə, tikinti və təchizat zənciri sahələrində forum və zirvələr təşkil edir.</p>
+        <p>Əsas istiqamətim korporativ satış və layihə menecmentidir. Tədbiri tam dövrü ilə aparıram: konsepsiya və planlama, sponsor və korporativ satışlar, tərəfdaşlıq anlaşmaları (MoU), spiker koordinasiyası, kommunikasiya və tədbir gününün idarəsi.</p>
+        <p>Materialları Azərbaycan, ingilis və rus dillərində hazırlayıram: spiker bioqrafiyaları, tədbir təqdimatları, rəsmi dəvət məktubları.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><span>Vəzifə</span><span>Layihə meneceri (full-cycle)</span></div>
+        <div class="fact"><span>Şirkət</span><span>Facemark</span></div>
+        <div class="fact"><span>Fokus</span><span>Korporativ satış, sponsorluq</span></div>
+        <div class="fact"><span>Məkan</span><span>Bakı, Azərbaycan</span></div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <section id="ok" class="done" role="status" tabindex="-1" hidden>
-    <h2>Müraciət göndərildi</h2>
-    <p>Müraciətinizi aldıq. Nəticə barədə daxil etdiyiniz e-poçt ünvanına yazacağıq.</p>
-  </section>
+<section id="layiheler">
+  <div class="wrap">
+    <div class="head"><h2>Layihələr</h2><span class="label">Proqram · 2026</span></div>
+    <ol class="agenda">
+      <li>
+        <div class="date">13.11.2026<small>The Ritz-Carlton</small></div>
+        <div>
+          <h3>Süni İntellekt Zirvəsi 2026 · Beyond Now</h3>
+          <p>300+ iştirakçı, dörd zona və on masterklass istiqaməti. Sponsor paketləri, spiker müraciət sistemi, seqmentləşdirilmiş e-poçt kampaniyaları və dövlət qurumlarına rəsmi dəvətlər.</p>
+          <div class="tags"><span class="tag">Sponsorluq</span><span class="tag">Spiker koordinasiyası</span><span class="tag">Kampaniyalar</span></div>
+        </div>
+        <div class="site"><a href="https://aisummit.az" target="_blank" rel="noopener">aisummit.az ↗</a></div>
+      </li>
+      <li>
+        <div class="date">20–21.11.2026<small>The Ritz-Carlton</small></div>
+        <div>
+          <h3>III Təchizat Zənciri Liderləri Zirvəsi &amp; Beynəlxalq Pərakəndə</h3>
+          <p>“Dəyər yaradan Zəncir” konsepsiyası, 500 iştirakçı. Altı modullu Future-Ready Procurement masterklassı, sponsorlar üçün qeymifikasiya modeli və fərdi tərəfdaşlıq təklifləri.</p>
+          <div class="tags"><span class="tag">Qeymifikasiya</span><span class="tag">Sayt kontenti</span><span class="tag">Masterklass</span></div>
+        </div>
+        <div class="site"><a href="https://www.sclforum.az/" target="_blank" rel="noopener">sclforum.az ↗</a></div>
+      </li>
+      <li>
+        <div class="date">27.11.2026<small>The Ritz-Carlton</small></div>
+        <div>
+          <h3>Səhiyyə Menecmenti Forumu</h3>
+          <p>From Science to Health ilə birgə. Beynəlxalq spikerlərin və moderatorların koordinasiyası, tərəfdaş yazışmaları.</p>
+          <div class="tags"><span class="tag">Spikerlər</span><span class="tag">Tərəfdaşlıq</span></div>
+        </div>
+        <div class="site"><a href="https://smforum.az" target="_blank" rel="noopener">smforum.az ↗</a></div>
+      </li>
+    </ol>
 
-  <form id="startup-form" name="startup-muraciet" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="startup-muraciet">
-    <div class="hp" aria-hidden="true">
-      <label>Bu xananı doldurmayın <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+    <h3 class="sub">Təşkilatçısı olduğum digər layihələr</h3>
+    <div class="more">
+      <div>Qadın Liderləri Zirvəsi<small>QLZ</small></div>
+      <div>IV Vergi və Mühasibatlıq Forumu<small>Facemark</small></div>
+      <div>İnteryer, İnşaat, Mebel və Memarlıq Forumu<small>Facemark</small></div>
+      <div>Milli İnsan Resursları Forumu<small>MİRF</small></div>
+      <div>Biznes Liderləri Zirvəsi<small>BLZ</small></div>
+      <div>MMF<small>Facemark</small></div>
+      <div>MQM<small>Facemark</small></div>
+      <div>BİF<small>Facemark</small></div>
     </div>
 
-    <p class="note">* ilə işarələnmiş xanalar məcburidir.</p>
-
-    <fieldset>
-      <legend>Startap haqqında</legend>
-
-      <div class="field">
-        <label for="startap_adi">Startapın adı *</label>
-        <input type="text" id="startap_adi" name="startap_adi" required autocomplete="organization">
-      </div>
-
-      <div class="row">
-        <div class="field">
-          <label for="sayt">Sayt və ya tətbiq linki *</label>
-          <input type="text" id="sayt" name="sayt" inputmode="url" placeholder="https://" required>
-        </div>
-        <div class="field">
-          <label for="sosial">Instagram və ya LinkedIn <span class="hint">könüllü</span></label>
-          <input type="text" id="sosial" name="sosial" inputmode="url">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="field">
-          <label for="qurulma_ili">Qurulma ili *</label>
-          <input type="number" id="qurulma_ili" name="qurulma_ili" min="2000" max="2026" inputmode="numeric" required>
-        </div>
-        <div class="field">
-          <label for="komanda_olcusu">Komanda üzvlərinin sayı *</label>
-          <input type="number" id="komanda_olcusu" name="komanda_olcusu" min="1" max="500" inputmode="numeric" required>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="sektor">Sektor *</label>
-        <select id="sektor" name="sektor" required>
-          <option value="" selected disabled>Seçin</option>
-          <option>Maliyyə və fintech</option>
-          <option>Səhiyyə</option>
-          <option>Təhsil</option>
-          <option>E-ticarət və pərakəndə</option>
-          <option>Logistika və təchizat zənciri</option>
-          <option>HR və işə qəbul</option>
-          <option>Marketinq və satış</option>
-          <option>Tikinti və daşınmaz əmlak</option>
-          <option>Dövlət xidmətləri (GovTech)</option>
-          <option>Kənd təsərrüfatı</option>
-          <option>Digər</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <span class="label" id="merhele-label">Hazırkı mərhələ *</span>
-        <div class="choices" role="radiogroup" aria-labelledby="merhele-label">
-          <label class="choice"><input type="radio" name="merhele" value="İşlək MVP / prototip" required> İşlək MVP və ya prototip</label>
-          <label class="choice"><input type="radio" name="merhele" value="İlk müştərilər var"> İlk müştərilər var</label>
-          <label class="choice"><input type="radio" name="merhele" value="Gəlir gətirir"> Gəlir gətirir</label>
-          <label class="choice"><input type="radio" name="merhele" value="İnvestisiya alıb"> İnvestisiya almışıq</label>
-        </div>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>Məhsul</legend>
-
-      <div class="field">
-        <label for="mehsul_tesviri">Məhsulu bir cümlə ilə təsvir edin *</label>
-        <textarea id="mehsul_tesviri" name="mehsul_tesviri" maxlength="200" required style="min-height:5rem"></textarea>
-        <span class="count"><span id="say">0</span>/200</span>
-      </div>
-
-      <div class="field">
-        <label for="problem">Hansı problemi həll edir? *</label>
-        <textarea id="problem" name="problem" required></textarea>
-      </div>
-
-      <div class="field">
-        <span class="label" id="ai-label">Məhsulda AI-nin rolu *</span>
-        <div class="choices" role="radiogroup" aria-labelledby="ai-label">
-          <label class="choice"><input type="radio" name="ai_rolu" value="Məhsulun əsasıdır" required> Məhsulun əsasını təşkil edir</label>
-          <label class="choice"><input type="radio" name="ai_rolu" value="Bəzi funksiyalarda istifadə olunur"> Bəzi funksiyalarda istifadə olunur</label>
-          <label class="choice"><input type="radio" name="ai_rolu" value="AI ilə bağlı problemi həll edir"> Məhsulda AI yoxdur, amma AI ilə bağlı problemi həll edir</label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="demo_linki">Demo linki, video və ya pitch deck linki *</label>
-        <input type="text" id="demo_linki" name="demo_linki" inputmode="url" placeholder="https://" required>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>Nəticələr</legend>
-      <div class="field">
-        <label for="netice">İstifadəçi və ya müştəri sayı, mükafat, qrant, investisiya <span class="hint">könüllü</span></label>
-        <textarea id="netice" name="netice"></textarea>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>Stenddə olacaq nəfər</legend>
-
-      <div class="row">
-        <div class="field">
-          <label for="heyet_ad">Ad və soyad *</label>
-          <input type="text" id="heyet_ad" name="heyet_ad" required autocomplete="name">
-        </div>
-        <div class="field">
-          <label for="heyet_vezife">Vəzifə *</label>
-          <input type="text" id="heyet_vezife" name="heyet_vezife" required autocomplete="organization-title">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="field">
-          <label for="heyet_email">E-poçt *</label>
-          <input type="email" id="heyet_email" name="heyet_email" required autocomplete="email">
-        </div>
-        <div class="field">
-          <label for="heyet_telefon">Telefon (WhatsApp) *</label>
-          <input type="tel" id="heyet_telefon" name="heyet_telefon" required autocomplete="tel" placeholder="+994">
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="heyet_linkedin">LinkedIn <span class="hint">könüllü</span></label>
-        <input type="text" id="heyet_linkedin" name="heyet_linkedin" inputmode="url">
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>Tədbirdən nə gözləyirsiniz</legend>
-
-      <div class="field">
-        <span class="label" id="axtarir-label">Kimlə tanış olmaq istəyirsiniz? *</span>
-        <div class="choices two" role="group" aria-labelledby="axtarir-label">
-          <label class="choice"><input type="checkbox" name="axtarir" value="İnvestor"> İnvestor</label>
-          <label class="choice"><input type="checkbox" name="axtarir" value="Müştəri"> Müştəri</label>
-          <label class="choice"><input type="checkbox" name="axtarir" value="Tərəfdaş"> Tərəfdaş</label>
-          <label class="choice"><input type="checkbox" name="axtarir" value="Mentor"> Mentor</label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="xususi_teleb">Stend üçün xüsusi tələb <span class="hint">könüllü: elektrik, ekran və s.</span></label>
-        <textarea id="xususi_teleb" name="xususi_teleb" style="min-height:5rem"></textarea>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>Təsdiq</legend>
-      <div class="choices">
-        <label class="choice"><input type="checkbox" name="razilashma_heyet" value="Bəli" required> Stend tədbir boyu heyətlə təmin olunacaq və məhsulun canlı demosu göstəriləcək. *</label>
-        <label class="choice"><input type="checkbox" name="razilashma_sertler" value="Bəli" required> İştirak şərtləri ilə razıyam və məlumatlarımın müraciətin nəzərdən keçirilməsi üçün istifadəsinə icazə verirəm. *</label>
-      </div>
-    </fieldset>
-
-    <div class="actions">
-      <button type="submit" id="gonder" class="btn">Müraciəti göndər</button>
+    <h3 class="sub">Facemark-dan əvvəl</h3>
+    <div class="more">
+      <div>I Süni İntellekt Zirvəsi<small>İştirak</small></div>
+      <div>II Süni İntellekt Zirvəsi<small>İştirak</small></div>
+      <div>Level Up Karyera Forumu<small>İştirak</small></div>
     </div>
-  </form>
-</main>
+  </div>
+</section>
 
-<script>
-(function () {
-  var form = document.getElementById('startup-form');
-  var ok = document.getElementById('ok');
-  var err = document.getElementById('err');
-  var btn = document.getElementById('gonder');
-  var tesvir = document.getElementById('mehsul_tesviri');
-  var say = document.getElementById('say');
+<section>
+  <div class="wrap">
+    <div class="head"><h2>Nə edirəm</h2><span class="label">Bacarıqlar</span></div>
+    <div class="skills">
+      <div>
+        <h3>Sponsorluq və tərəfdaşlıq</h3>
+        <ul>
+          <li>Pilləli sponsor paketləri, 360° fayda modeli</li>
+          <li>Fərdi təkliflər və MoU-lar</li>
+          <li>Sponsor bazasının seqmentasiyası</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tədbir istehsalı</h3>
+        <ul>
+          <li>Spiker və moderator koordinasiyası</li>
+          <li>Aqenda, proqram və transfer cədvəlləri</li>
+          <li>Tədbir günü komanda bölgüsü</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kommunikasiya</h3>
+        <ul>
+          <li>E-poçt və LinkedIn kampaniyaları</li>
+          <li>SMM və tədbir kontenti</li>
+          <li>Rəsmi yazışmalar</li>
+        </ul>
+        <div class="langs" style="margin-top:16px"><span>Azərbaycan</span><span>English</span><span>Türkçe</span><span>Русский</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  function saya() { say.textContent = tesvir.value.length; }
-  tesvir.addEventListener('input', saya);
-  saya();
+<section id="sertifikatlar">
+  <div class="wrap">
+    <div class="head"><h2>Sertifikatlar</h2><span class="label">Təhsil · Kurslar</span></div>
+    <div class="certs">
+      <div class="cert"><span class="label">Sertifikat</span><h3>I Süni İntellekt Zirvəsi</h3><p>Təşkilatçı · İl</p></div>
+      <div class="cert"><span class="label">Sertifikat</span><h3>II Süni İntellekt Zirvəsi</h3><p>Təşkilatçı · İl</p></div>
+      <div class="cert"><span class="label">Sertifikat</span><h3>Level Up Karyera Forumu</h3><p>Təşkilatçı · İl</p></div>
+    </div>
+    <p class="note">Tarix və təşkilatçı məlumatları sertifikatlara əsasən əlavə olunacaq.</p>
+  </div>
+</section>
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    err.hidden = true;
-    btn.disabled = true;
-    btn.textContent = 'Göndərilir…';
-
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
-    })
-    .then(function (r) {
-      if (!r.ok) { throw new Error('HTTP ' + r.status); }
-      form.hidden = true;
-      err.hidden = true;
-      ok.hidden = false;
-      window.scrollTo(0, 0);
-      ok.focus();
-    })
-    .catch(function () {
-      err.hidden = false;
-      btn.disabled = false;
-      btn.textContent = 'Müraciəti göndər';
-      err.scrollIntoView({ block: 'center' });
-      err.focus();
-    });
-  });
-})();
-</script>
+<section class="contact" id="elaqe">
+  <div class="wrap">
+    <div class="head"><h2>Əlaqə</h2><span class="label">Sosial şəbəkələr</span></div>
+    <div class="links">
+      <a href="#elaqe">LinkedIn<small>link əlavə ediləcək</small><span aria-hidden="true">↗</span></a>
+      <a href="#elaqe">Facebook<small>link əlavə ediləcək</small><span aria-hidden="true">↗</span></a>
+      <a href="https://facemark.az" target="_blank" rel="noopener">Facemark<small>facemark.az</small><span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap">© 2026 Aydan Mehdiyeva</div></footer>
 </body>
 </html>
